@@ -8,73 +8,81 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="left-side">
-            <div class="avatar">
-                <img src="images/my_photo.jpg" alt="photo" class='image'>
-            </div>
+        <aside class="left-side">
+            <figure class="avatar">
+                <img src="images/my_photo.jpg" alt="Фотографія Гуменюка Дениса" class="image">
+            </figure>
             <ul class="menu">
                 <li>
-                    <div>Особисті дані</div>
-                    <ul id="contacts">
-                        <li>Ім'я<p>Гуменюк Денис</p></li>
-                        <li>Адреса<p>м. Івано-Франківськ</p></li>
-                        <li>Телефон<p>+38 066 281-09-33</p></li>
-                        <li>Email<p>denys.humeniuk-pi2302@kep.nung.edu.ua</p></li>
-                        <li>Дата народження<p>06.06.2008</p></li>
-                    </ul>
+                    <section>
+                        <h2>Особисті дані</h2>
+                        <ul>
+                            <li>Ім'я<span>Гуменюк Денис</span></li>
+                            <li>Адреса<address>м. Івано-Франківськ</address></li>
+                            <li>Телефон<address>+38 066 281-09-33</address></li>
+                            <li>Email<address>denys.humeniuk-pi2302@kep.nung.edu.ua</address></li>
+                            <li>Дата народження<time datetime="2008-06-06">06.06.2008</time></li>
+                        </ul>
+                    </section>
                 </li>
                 <li>
-                    <div>Інтереси</div>
-                    <ul>
-                        <li>Веб-розробка</li>
-                        <li>Програмування</li>
-                        <li>Робота з базами даних</li>
-                        <li>Робота з програмним забезпеченням</li>
-                    </ul>
+                    <section>
+                        <h2>Інтереси</h2>
+                        <ul>
+                            <li>Веб-розробка</li>
+                            <li>Програмування</li>
+                            <li>Робота з базами даних</li>
+                            <li>Робота з програмним забезпеченням</li>
+                        </ul>
+                    </section>
                 </li>
                 <li>
-                    <div>Мови</div>
-                    <ul class="menu-sublist">
-                        <li>Англійська <span>Середній рівень</span></li>
-                        <li>Німецька <span>Базовий рівень</span></li>
-                        <li>Українська <span>Рідна мова</span></li>
-                    </ul>
+                    <section>
+                        <h2>Мови</h2>
+                        <ul class="menu-sublist">
+                            <li>Англійська <span>Середній рівень</span></li>
+                            <li>Німецька <span>Базовий рівень</span></li>
+                            <li>Українська <span>Рідна мова</span></li>
+                        </ul>
+                    </section>
                 </li>
             </ul>
-        </div>
+        </aside>
         <div class="right-side">
-            <div class="nav-menu">
-                <ul>
-                    <li><a href="#main" class="btn">Головна</a></li>
-                    <li><a href="#skills" class="btn">Навички</a></li>
-                    <li><a href="#portfolio" class="btn">Портфоліо</a></li>
-                </ul>
-            </div>
-            <div class="right-inner">
+            <header>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#main" class="btn">Головна</a></li>
+                        <li><a href="#skills" class="btn">Навички</a></li>
+                        <li><a href="#portfolio" class="btn">Портфоліо</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="right-inner" id="main">
                 <h1>Гуменюк Денис</h1>
-                <div class="block">
-                    <h2 id="main">Про себе</h2>
+                <section class="block">
+                    <h2>Про себе</h2>
                     <p>
                         Студент спеціальності «Інженерія програмного забезпечення», який цікавиться програмуванням та
                         розробкою програмних продуктів. Відповідально ставлюся до навчання, уважно виконую поставлені
                         завдання та постійно працюю над удосконаленням своїх професійних навичок у сфері інформаційних
                         технологій.
                     </p>
-                </div>
-                <div class="block">
+                </section>
+                <section class="block">
                     <h2>Освіта і кваліфікації</h2>
                     <ul>
                         <li>
                             <div class="entry-header">
                                 <span>Фаховий молодший бакалавр</span>
-                                <span>вер 2023 - теп. час</span>
+                                <span><time datetime="2023-09">вер 2023</time> - теп. час</span>
                             </div>
                             <p class="italic-font">ВСП "Фаховий коледж електронних приладів ІФНТУНГ", Івано-Франківськ</p>
                             <p>Спеціальність "Інженерія програмного забезпечення"</p>
                         </li>
                     </ul>
-                </div>
-                <div class="block">
+                </section>
+                <section class="block">
                     <h2 id="skills">Навички</h2>
                     <ol>
                         <li>Java</li>
@@ -83,14 +91,14 @@
                         <li>MySQL/PostgreSQL</li>
                         <li>HTML/CSS</li>
                     </ol>
-                </div>
-                <div class="block">
+                </section>
+                <section class="block">
                     <h2 id="portfolio">Портфоліо</h2>
                     <ul>
                         <li><a href="lr3/index.html" class="btn">Лабораторна робота №3</a></li>
                     </ul>
-                </div>
-            </div>
+                </section>
+            </main>
         </div>
     </div>
 </body>

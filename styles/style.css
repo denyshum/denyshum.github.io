@@ -9,6 +9,10 @@ body {
     line-height: 1.4;
 }
 
+address {
+    font-style: normal;
+}
+
 .page-container {
     max-width: 980px;
     margin: 20px auto 0;
@@ -16,7 +20,6 @@ body {
 }
 
 .left-side {
-    display: inline-block;
     width: 25%;
     background-color: #3a5e90;
     padding: 20px 0;
@@ -24,8 +27,7 @@ body {
 }
 
 .right-side {
-    display: inline-block;
-    width: calc(75% - 6px);
+    width: 75%;
 }
 
 .avatar {
@@ -50,7 +52,7 @@ body {
     font-size: 0.9em;
 }
 
-.menu > li > div {
+.menu h2 {
     border-bottom: 2px solid white;
     padding-bottom: 10px;
     margin-bottom: 15px;
@@ -67,8 +69,12 @@ body {
     margin-left: 20px;
 }
 
-.menu p {
+.menu address, .menu time, .menu span {
     font-weight: normal;
+}
+
+.menu span, .menu time {
+    display: block;
 }
 
 .menu ul {
@@ -80,7 +86,7 @@ body {
     justify-content: space-between;
 }
 
-.right-side h1 {
+.right-inner h1 {
     border-bottom: 2px solid #cfcfcf;
     padding-bottom: 15px;
     margin-bottom: 15px;
@@ -103,10 +109,6 @@ body {
 
 .italic-font {
     font-style: italic;
-}
-
-.menu-sublist span {
-    font-weight: normal;
 }
 
 .nav-menu ul {
