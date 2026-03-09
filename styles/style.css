@@ -151,11 +151,11 @@ address {
     text-align: justify;
 }
 
-.block > ul > li {
+.block ul > li {
     list-style: none;
 }
 
-.block > ol {
+.block ol {
     padding-left: 20px;
 }
 
