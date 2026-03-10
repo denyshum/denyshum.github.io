@@ -45,14 +45,14 @@ address {
     width: 100%;
 }
 
-.menu li {
+.info-list li {
     list-style: none;
     margin-bottom: 10px;
     font-weight: bold;
     font-size: 0.9em;
 }
 
-.menu h2 {
+.info-list h2 {
     border-bottom: 2px solid white;
     padding-bottom: 10px;
     margin-bottom: 15px;
@@ -60,24 +60,24 @@ address {
     font-size: 1.2em;
 }
 
-.menu > li {
+.info-list > li {
     margin-bottom: 15px;
 }
 
-.menu {
+.info-list {
     margin-top: 20px;
     margin-left: 20px;
 }
 
-.menu address, .menu time, .menu span {
+.info-list address, .info-list time, .info-list span {
     font-weight: normal;
 }
 
-.menu span, .menu time {
+.info-list span, .info-list time {
     display: block;
 }
 
-.menu ul {
+.info-list ul {
     margin-right: 20px;
 }
 
