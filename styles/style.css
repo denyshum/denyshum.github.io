@@ -81,7 +81,7 @@ address {
     margin-right: 20px;
 }
 
-.menu-sublist li {
+.details-list li {
     display: flex;
     justify-content: space-between;
 }
