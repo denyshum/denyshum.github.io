@@ -25,16 +25,16 @@
 }
 
 .battery-low:before {
-    background: #ed1c24;
+    background-color: #ed1c24;
     width: calc(100% / 3);
 }
 
 .battery-medium:before {
-    background: #ffc60b;
+    background-color: #ffc60b;
     width: calc(100% / 3 * 2);
 }
 
 .battery-high:before {
-    background: #00a055;
+    background-color: #00a055;
     width: 100%;
 }
