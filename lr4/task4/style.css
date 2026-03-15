@@ -1,0 +1,40 @@
+.battery {
+    position: relative;
+    height: 60px;
+    width: 200px;
+    margin-bottom: 15px;
+    border: 5px solid black;
+}
+
+.battery:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100% + 5px);
+    width: 8px;
+    height: 24px;
+    margin: auto;
+    background-color: black;
+}
+
+.battery:before {
+    content: "";
+    display: block;
+    height: 100%;
+}
+
+.battery-low:before {
+    background: #ed1c24;
+    width: calc(100% / 3);
+}
+
+.battery-medium:before {
+    background: #ffc60b;
+    width: calc(100% / 3 * 2);
+}
+
+.battery-high:before {
+    background: #00a055;
+    width: 100%;
+}
