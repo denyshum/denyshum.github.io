@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pricing-card {
+    margin: 50px auto;
+    max-width: 300px;
+    text-align: center;
+    border-left: 3px solid #dcdcdc;
+    border-right: 3px solid #dcdcdc;
+    border-top: 1px solid #dcdcdc;
+}
+
+.card-inner {
+    border-top: 2px solid #00db74;
+    border-bottom: 2px solid #00db74;
+}
+
+.card-title {
+    padding: 20px 0;
+    color: #00db74;
+}
+
+.price {
+    padding: 10px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    background-color: #00db74;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    padding: 10px 0;
+    color: gray;
+}
+
+.features-list li:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.button-wrapper {
+    padding: 30px 0;
+}
+
+.purchase-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #00db74;
+    border: 2px solid #00db74;
+    border-radius: 5px;
+}
+
+.purchase-btn:hover {
+    color: white;
+    background-color: #00db74;
+}
