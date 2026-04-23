@@ -162,3 +162,20 @@ address {
 .right-inner ul li {
     padding-bottom: 10px;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.social a {
+    margin-right: calc((100% - (28px * 4)) / 4);
+}
+
+.social svg {
+    fill: #fff;
+}
+
+.social a:hover {
+    opacity: 0.7;
+}
