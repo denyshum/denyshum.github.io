@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Raleway, sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+p, time {
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+section:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+section:last-child {
+    padding-bottom: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.container-title {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.container-list .container-item {
+    margin: 25px 0;
+}
+
+.container-list .container-item:first-child {
+    margin-top: 0;
+}
+
+.container-list .container-item:last-child {
+    margin-bottom: 0;
+}
+
+.container .btn {
+    margin: 20px 0 0;
+    padding: 15px 25px;
+    font-weight: bold;
+    background-color: #fa5ba5;
+    border-radius: 25px;
+}
+
+.container .btn:hover {
+    background-color: #e04a90;
+}
+
+.brand {
+    font-size: 1.75rem;
+    color: #59abe3;
+}
+
+.icon-large {
+    margin-bottom: 10px;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.top a:hover {
+    opacity: .7;
+}
+
+.top .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15% 10px;
+}
+
+.top li {
+    margin: 10px 0;
+    color: #aaa;
+}
+
+header .hero {
+    width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+    margin-top: 189px;
+    color: #fff;
+    background: url(img/jumbotron.jpg) 50% 0 / cover;
+}
+
+.container-item-inner {
+    padding: 20px;
+}
+
+.container-item-title {
+    font-weight: 500;
+}
+
+.container-item img {
+    margin: 0 auto;
+}
+
+.container-item p {
+    margin: 10px 0;
+    color: #999;
+}
+
+.container-item time {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+}
+
+.card-grid .container-item {
+    margin-top: 30px;
+}
+
+.container-item .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.quote-author {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+footer {
+    color: #bcc9dd;
+    background-color: #38404b;
+}
+
+footer a:hover {
+    opacity: .7;
+}
+
+footer .brand {
+    color: inherit;
+}
+
+footer li {
+    margin: 5px 0;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: .75rem;
+    color: #e4e4e5;
+}
+
+@media screen and (min-width: 1024px) {
+    .container-title {
+        margin-bottom: 40px;
+    }
+
+    .container .btn {
+        margin: 75px 0 0;
+    }
+
+    .container-list .container-item {
+        margin: 0;
+    }
+
+    .icon-large {
+        font-size: 3rem;
+    }
+
+    .top .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .top .container li {
+        display: inline-block;
+        margin: 10px;
+    }
+
+    header .hero {
+        min-height: 350px;
+        margin-top: 69px;
+        padding: 60px 0;
+    }
+
+    .container-list {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .container-item {
+        width: calc((100% - 100px) / 3);
+    }
+
+    .card-grid .container-item {
+        display: flex;
+        width: 100%;
+    }
+
+    .container-item-inner {
+        text-align: left;
+    }
+
+    footer li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .copyright {
+        margin-top: 30px;
+    }
+}
