@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Form</title>
+</head>
+<body>
+    <main>
+        <header class="form-header">
+            <h2>Fuel Your Brand’s Goals with <span class="highlight">Beyond</span></h2>
+            <p>You will get a response within 24 hours. We will explain in details how we can help you fuel and grow your brand within the stated budget.</p>
+        </header>
+        <form action="" method="POST" autocomplete="on">
+            <div class="form-group floating-label-group">
+                <input type="text" name="name" id="name" placeholder=" " required>
+                <label for="name">Name</label>
+            </div>
+            
+            <div class="form-group floating-label-group">
+                <input type="email" name="email" id="email" placeholder=" " required>
+                <label for="email">Email address</label>
+            </div>
+            
+            <div class="form-group floating-label-group">
+                <input type="tel" name="phone" id="phone" placeholder=" ">
+                <label for="phone">Phone number</label>
+            </div>
+            
+            <div class="form-group floating-label-group">
+                <input type="text" name="budget" id="budget" placeholder=" ">
+                <label for="budget">Budget</label>
+            </div>
+            
+            <div class="form-group floating-label-group">
+                <textarea name="goals" id="goals" rows="1" placeholder=" "></textarea>
+                <label for="goals">Goals</label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">
+                    <span>Send Enquiry</span>
+                    <svg class="icon" viewBox="0 0 114 93">
+                        <use href="assets/icons/arrow-right.svg#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

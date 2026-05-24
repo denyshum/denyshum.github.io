@@ -1,0 +1,171 @@
+@import url('fonts/stylesheet.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Nexa, sans-serif;
+    color: #fff;
+    background-color: #121212;
+}
+
+.form-header {
+    max-width: 675px;
+    margin: 50px auto 0;
+    text-align: center;
+}
+
+.form-header h2 {
+    margin-bottom: 25px;
+    font-weight: 800;
+    font-size: 4em;
+    line-height: 1;
+}
+
+.form-header p {
+    color: #cecece;
+    line-height: 1.61;
+}
+
+.highlight {
+    color: #676ce7;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 800px;
+    margin: 80px auto;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-family: inherit;
+    font-size: 1.5em;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #676767;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #fff;
+    caret-color: #676ce7;
+}
+
+.floating-label-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1.5em;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.floating-label-group input:focus + label,
+.floating-label-group input:not(:placeholder-shown) + label,
+.floating-label-group textarea:focus + label,
+.floating-label-group textarea:not(:placeholder-shown) + label {
+    top: -12px;
+    font-size: .8em;
+    color: #676767;
+}
+
+.form-actions {
+    margin: 0 auto;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-family: inherit;
+    font-size: 1.5em;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.submit-btn .icon {
+    height: 32px;
+}
+
+.submit-btn:hover {
+    color: #676ce7;
+    letter-spacing: 14.5%;
+}
+
+.submit-btn:active {
+    color: #353651;
+}
+
+@media screen and (max-width: 870px) {
+    main {
+        padding: 0 20px;
+    }
+
+    .form-header h2 {
+        font-size: 3em;
+    }
+
+    form {
+        gap: 35px;
+        margin: 60px auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-header {
+        margin-top: 30px;
+    }
+
+    .form-header h2 {
+        margin-bottom: 15px;
+        font-size: 2.2em;
+    }
+
+    form {
+        gap: 25px;
+        margin: 40px auto;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .floating-label-group label {
+        font-size: 1em;
+    }
+
+    .submit-btn {
+        gap: 15px;
+        font-size: 1.2em;
+    }
+
+    .submit-btn .icon {
+        height: 24px;
+    }
+
+    .floating-label-group input:focus + label,
+    .floating-label-group input:not(:placeholder-shown) + label,
+    .floating-label-group textarea:focus + label,
+    .floating-label-group textarea:not(:placeholder-shown) + label {
+        top: -10px;
+    }
+}
