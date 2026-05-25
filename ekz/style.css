@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #382b56;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav {
+    display: none;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a:hover {
+    opacity: .8;
+}
+
+.page-banner {
+    background-color: #382b56;
+    color: #fff;
+    padding: 40px 0 80px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery figure {
+    width: 100%;
+    max-width: 350px;
+}
+
+.img-wrapper {
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+}
+
+.gallery figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform .3s ease;
+}
+
+.gallery figure img:hover {
+    transform: scale(1.05);
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #000000;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer address {
+    font-style: normal;
+    color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    header .container {
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-right: 40px;
+    }
+
+    nav {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .gallery figure {
+        width: calc(50% - 10px);
+        max-width: none;
+    }
+
+    footer address {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer address p:not(:last-child):after {
+        content: "|";
+        margin: 0 15px;
+        color: #555;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery figure {
+        width: calc(25% - 15px);
+    }
+}
