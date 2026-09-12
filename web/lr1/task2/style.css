@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100dvh;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    background-color: #51c93b;
+    border-radius: 4px;
+}
