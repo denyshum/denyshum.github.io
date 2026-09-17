@@ -7,13 +7,33 @@ function askStudent() {
         return;
     }
 
-    if (userInput.trim() !== "") {
-        const li = document.createElement("li");
-        li.textContent = userInput;
-        ul.append(li);
+    const cleanInput = userInput.trim();
+
+    if (cleanInput === "") {
+        alert("Ви нічого не ввели! Спробуйте ще раз.");
+        setTimeout(askStudent, 10);
+        return;
     }
+
+    const words = cleanInput.split(/\s+/);
+    if (words.length < 2) {
+        alert("Будь ласка, введіть прізвище та ім'я (мінімум два слова)!");
+        setTimeout(askStudent, 10);
+        return;
+    }
+
+    const isValidLetters = /^[а-яА-ЯєЄіІїЇґҐa-zA-Z\s'-]+$/.test(cleanInput);
+    if (!isValidLetters) {
+        alert("Помилка! Прізвище та ім'я не можуть містити цифри або спецсимволи.");
+        setTimeout(askStudent, 10);
+        return;
+    }
+
+    const li = document.createElement("li");
+    li.textContent = userInput;
+    ul.append(li);
 
     setTimeout(askStudent, 10);
 }
 
-askStudent();
+setTimeout(askStudent, 100);
