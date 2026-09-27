@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#hello {
+    padding: 14px 32px;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3b82f6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+#hello:hover {
+    background-color: #2563eb;
+}
