@@ -1,0 +1,26 @@
+#captchaDisplay {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 4px;
+    border: 2px solid #bbb;
+    border-bottom: none;
+}
+
+.captcha-digit {
+    display: grid;
+    grid-template-columns: repeat(3, 10px);
+    grid-auto-rows: 10px;
+}
+
+.captcha-pixel-on {
+    background-color: red;
+}
+
+.captcha-ok {
+    color: green;
+}
+
+.captcha-error {
+    color: red;
+}

@@ -1,0 +1,8 @@
+#options label {
+    display: block;
+    cursor: pointer;
+}
+
+#options input {
+    margin-right: 8px;
+}

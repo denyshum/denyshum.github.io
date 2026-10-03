@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    font-family: Arial, sans-serif;
+    font-size: 1.25rem;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.375rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.row label {
+    width: 300px;
+}
+
+button {
+    padding: 4px 10px;
+    margin: 6px 0;
+    font-size: 1rem;
+}
+
+.row input {
+    width: 220px;
+    padding: 4px;
+    font-size: 1.125rem;
+}
