@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>ToDo List</h1>
+        <div id="filters" class="controls">
+            <button type="button" data-filter="all">Усі</button>
+            <button type="button" data-filter="active">Невиконані</button>
+            <button type="button" data-filter="done">Виконані</button>
+        </div>
+        <div id="sorting" class="controls">
+            <button type="button" data-sort="new">Нові спочатку</button>
+            <button type="button" data-sort="active">Невиконані спочатку</button>
+            <button type="button" data-sort="done">Виконані спочатку</button>
+        </div>
+        <input type="text" id="newTask" placeholder="Додайте завдання" autocomplete="off">
+        <ul id="list"></ul>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
