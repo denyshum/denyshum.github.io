@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="cart-page">
+        <h2 class="cart-page__title">Ви обрали:</h2>
+        <table class="cart-table" id="cartTable">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Назва товару</th>
+                    <th>Ціна за од.</th>
+                    <th>К-сть:</th>
+                    <th>Сума:</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cartBody"></tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td colspan="3">Разом до оплати:</td>
+                    <td id="cartTotal"></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <p class="cart-page__empty" id="cartEmpty" hidden>Корзина пуста</p>
+        <div class="cart-page__actions">
+            <a href="#" class="button button--primary" id="payLink">Оплатити</a>
+            <a href="index.html" class="button button--secondary">Повернутись до покупок</a>
+        </div>
+    </section>
+    <dialog class="modal" id="modal"></dialog>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/cart.js"></script>
+</body>
+</html>
