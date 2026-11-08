@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №14</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="page" hidden>
+        <div class="language-control">
+            <label for="language-selector" data-i18n="language">Мова</label>
+            <select id="language-selector">
+                <option value="uk">Українська</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <section class="cart-page">
+            <h2 class="cart-page__title" data-i18n="selected">Ви обрали:</h2>
+            <table class="cart-table" id="cartTable">
+                <thead>
+                    <tr>
+                        <th data-i18n="number">№</th>
+                        <th data-i18n="productName">Назва товару</th>
+                        <th data-i18n="unitPrice">Ціна за од.</th>
+                        <th data-i18n="quantity">К-сть:</th>
+                        <th data-i18n="sum">Сума:</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cartBody"></tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td colspan="3" data-i18n="total">Разом до оплати:</td>
+                        <td id="cartTotal"></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p class="cart-page__empty" id="cartEmpty" data-i18n="emptyCart" hidden>Корзина пуста</p>
+            <div class="cart-page__actions">
+                <a href="#" class="button button--primary" id="payLink" data-i18n="pay">Оплатити</a>
+                <a href="index.html" class="button button--secondary" data-i18n="continueShopping">Повернутись до покупок</a>
+            </div>
+        </section>
+    </div>
+    <dialog class="modal" id="language-modal">
+        <div class="modal__box">
+            <p class="modal__text">Оберіть мову / Choose a language</p>
+            <div class="modal__actions">
+                <button class="button button--primary" type="button" data-language="uk">Українська</button>
+                <button class="button button--secondary" type="button" data-language="en">English</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog class="modal" id="modal"></dialog>
+    <script src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script>
+    <script src="script.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/cart.js"></script>
+</body>
+</html>

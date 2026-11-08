@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №14</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="page" hidden>
+        <div class="language-control">
+            <label for="language-selector" id="language-label">Мова</label>
+            <select id="language-selector">
+                <option value="uk">Українська</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <section class="cart-page">
+            <h2 class="cart-page__title" id="cart-heading">Ви обрали:</h2>
+            <table class="cart-table" id="cartTable">
+                <thead>
+                    <tr>
+                        <th id="column-number">№</th>
+                        <th id="column-name">Назва товару</th>
+                        <th id="column-price">Ціна за од.</th>
+                        <th id="column-quantity">К-сть:</th>
+                        <th id="column-sum">Сума:</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cartBody"></tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td colspan="3" id="total-label">Разом до оплати:</td>
+                        <td id="cartTotal"></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p class="cart-page__empty" id="cartEmpty" hidden>Корзина пуста</p>
+            <div class="cart-page__actions">
+                <a href="#" class="button button--primary" id="payLink">Оплатити</a>
+                <a href="index.html" class="button button--secondary" id="back-link">Повернутись до покупок</a>
+            </div>
+        </section>
+    </div>
+    <dialog class="modal" id="language-modal">
+        <div class="modal__box">
+            <p class="modal__text">Оберіть мову / Choose a language</p>
+            <div class="modal__actions">
+                <button class="button button--primary" type="button" data-language="uk">Українська</button>
+                <button class="button button--secondary" type="button" data-language="en">English</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog class="modal" id="modal"></dialog>
+    <script src="script.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/cart.js"></script>
+</body>
+</html>
