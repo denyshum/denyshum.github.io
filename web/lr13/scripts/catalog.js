@@ -97,16 +97,40 @@ catalogList.addEventListener("click", (event) => {
 
 async function initCatalog() {
     const catalog = await loadProducts();
-    document.title = catalog.title;
     catalogTitle.textContent = catalog.title;
 
     const prevArrow = createElementWithClass("div", "catalog__arrow catalog__arrow--prev", "<");
     const nextArrow = createElementWithClass("div", "catalog__arrow catalog__arrow--next", ">");
     catalogList.append(prevArrow, nextArrow);
 
-    catalog.products.forEach(product => {
-        catalogList.append(createProductCard(product));
+    const cards = catalog.products.map(createProductCard);
+    catalogList.append(...cards);
+    let firstIndex = 0;
+    const visibleCount = 4;
+
+    function showProducts() {
+        cards.forEach((card, index) => {
+            card.hidden = index < firstIndex || index >= firstIndex + visibleCount;
+        });
+        prevArrow.hidden = firstIndex === 0;
+        nextArrow.hidden = firstIndex + visibleCount >= cards.length;
+    }
+
+    prevArrow.addEventListener("click", () => {
+        if (firstIndex > 0) {
+            firstIndex--;
+            showProducts();
+        }
     });
+
+    nextArrow.addEventListener("click", () => {
+        if (firstIndex + visibleCount < cards.length) {
+            firstIndex++;
+            showProducts();
+        }
+    });
+
+    showProducts();
     updateCount();
 }
 
