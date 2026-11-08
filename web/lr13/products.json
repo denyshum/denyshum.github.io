@@ -1,0 +1,78 @@
+{
+    "title": "Обов'язково додайте своє замовлення",
+    "products": [
+        {
+            "id": "thousand-splendid-suns",
+            "name": "Тисяча осяйних сонць",
+            "category": "Художня література",
+            "categoryUrl": "https://www.yakaboo.ua/ua/knigi/hudozhestvennaja-literatura.html",
+            "price": null,
+            "description": "Роман Халеда Госсейні про долі двох жінок в Афганістані.",
+            "image": "images/book-tysiacha-osianykh-sonts.jpg",
+            "url": "https://www.yakaboo.ua/ua/tisjacha-osjajnih-sonc.html",
+            "available": false,
+            "badge": "Новинка",
+            "badgeType": "new"
+        },
+        {
+            "id": "clean-architecture",
+            "name": "Чиста архітектура",
+            "category": "Наука і техніка",
+            "categoryUrl": "https://www.yakaboo.ua/ua/knigi/nauka-i-tehnika.html",
+            "price": 990,
+            "description": "Книга Роберта Мартіна про побудову архітектури програмних систем.",
+            "image": "images/book-chysta-arkhitektura.jpg",
+            "url": "https://www.yakaboo.ua/ua/chista-arhitektura.html",
+            "available": true
+        },
+        {
+            "id": "psychology-of-influence",
+            "name": "Психологія впливу",
+            "category": "Саморозвиток. Мотивація",
+            "categoryUrl": "https://www.yakaboo.ua/ua/knigi/samorazvitie-motivacija.html",
+            "price": 460,
+            "description": "Книга Роберта Чалдині про принципи переконання та впливу.",
+            "image": "images/book-psykholohiia-vlpyvu.jpg",
+            "url": "https://www.yakaboo.ua/ua/psihologija-vplivu-onovleno-ta-dopovneno-2351481.html",
+            "available": true,
+            "badge": "Хіт продажів",
+            "badgeType": "bestseller"
+        },
+        {
+            "id": "island-hur",
+            "name": "Острів ГУР. Таємниці. Операції. Війна",
+            "category": "Історія. Держава. Мова",
+            "categoryUrl": "https://www.yakaboo.ua/ua/knigi/istorija-derzhava-mova.html",
+            "price": 333,
+            "oldPrice": 370,
+            "description": "Книга про українську воєнну розвідку та її операції.",
+            "image": "images/book-ostriv-gur.jpg",
+            "url": "https://www.yakaboo.ua/ua/ostriv-gur-taemnici-operacii-vijna.html",
+            "available": true,
+            "badge": "Хіт продажів",
+            "badgeType": "bestseller"
+        },
+        {
+            "id": "hobbit",
+            "name": "Гобіт, або Туди і звідти",
+            "category": "Художня література",
+            "categoryUrl": "https://www.yakaboo.ua/ua/knigi/hudozhestvennaja-literatura.html",
+            "price": 429,
+            "description": "Пригодницька історія Джона Р. Р. Толкіна про мандрівку Більбо Торбина.",
+            "image": "images/book-hobbit.webp",
+            "url": "https://www.yakaboo.ua/ua/gobit-abo-tudi-i-zvidti-1441059.html",
+            "available": true
+        },
+        {
+            "id": "1984",
+            "name": "1984",
+            "category": "Художня література",
+            "categoryUrl": "https://www.yakaboo.ua/ua/knigi/hudozhestvennaja-literatura.html",
+            "price": 220,
+            "description": "Роман-антиутопія Джорджа Орвелла про тоталітарне суспільство.",
+            "image": "images/book-1984.webp",
+            "url": "https://www.yakaboo.ua/ua/1984-2222687.html",
+            "available": true
+        }
+    ]
+}

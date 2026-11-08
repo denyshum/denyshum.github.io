@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог товарів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="cart.html" class="cart" id="cartLink" title="Корзина">
+        <img src="images/cart.svg" alt="Корзина">
+        <span class="cart__count" id="cartCount">0</span>
+    </a>
+    <section class="catalog">
+        <h2 class="catalog__title"></h2>
+        <div class="catalog__list" id="product-container"></div>
+    </section>
+    <dialog class="modal" id="modal"></dialog>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/catalog.js"></script>
+</body>
+</html>
