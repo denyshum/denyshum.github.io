@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №17</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="page" hidden>
+        <div class="language-control">
+            <a href="../express-api/books.html" id="manage-link">Керування книгами</a>
+            <label for="language-selector" id="language-label">Мова</label>
+            <select id="language-selector">
+                <option value="uk">Українська</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <a href="cart.html" class="cart" id="cartLink" title="Корзина">
+            <img src="../images/cart.svg" alt="Корзина">
+            <span class="cart__count" id="cartCount">0</span>
+        </a>
+        <section class="catalog">
+            <h2 class="catalog__title"></h2>
+            <div class="catalog__list" id="product-container"></div>
+        </section>
+    </div>
+    <dialog class="modal" id="language-modal">
+        <div class="modal__box">
+            <p class="modal__text">Оберіть мову / Choose a language</p>
+            <div class="modal__actions">
+                <button class="button button--primary" type="button" data-language="uk">Українська</button>
+                <button class="button button--secondary" type="button" data-language="en">English</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog class="modal" id="modal"></dialog>
+    <script src="script.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/catalog.js"></script>
+</body>
+</html>

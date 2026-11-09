@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог товарів</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 20px auto;
+            max-width: 850px;
+            padding: 0 15px;
+            background: #f7f9fa;
+            color: #333;
+        }
+        h1, h2 {
+            margin-bottom: 15px;
+        }
+        .box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .form-row {
+            margin-bottom: 12px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .actions {
+            margin-top: 15px;
+        }
+        button {
+            background: #0066cc;
+            color: #fff;
+            border: none;
+            padding: 9px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        button:hover {
+            background: #0052a3;
+        }
+        .cancel-btn {
+            background: #757575;
+            margin-left: 8px;
+        }
+        .cancel-btn:hover {
+            background: #616161;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #f0f3f5;
+        }
+        .edit-btn {
+            background: #f57c00;
+            padding: 5px 10px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+        .edit-btn:hover {
+            background: #ef6c00;
+        }
+        .del-btn {
+            background: #d32f2f;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .del-btn:hover {
+            background: #b71c1c;
+        }
+        .msg {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Керування книгами</h1>
+    <p><a href="../catalog/index.html">Перейти до каталогу</a></p>
+
+    <div class="box">
+        <h2 id="formTitle">Додавання товару</h2>
+        <form id="bookForm">
+            <input type="hidden" id="editId">
+            <div class="form-row">
+                <label for="title">Назва:</label>
+                <input type="text" id="title" required>
+            </div>
+            <div class="form-row">
+                <label for="author">Автор:</label>
+                <input type="text" id="author" required>
+            </div>
+            <div class="form-row">
+                <label for="category">Категорія:</label>
+                <input type="text" id="category" required>
+            </div>
+            <div class="form-row">
+                <label for="price">Ціна (грн):</label>
+                <input type="number" id="price" min="0" step="0.01" required>
+            </div>
+            <div class="form-row">
+                <label for="titleEn">Назва англійською:</label>
+                <input type="text" id="titleEn">
+            </div>
+            <div class="form-row">
+                <label for="categoryEn">Категорія англійською:</label>
+                <input type="text" id="categoryEn">
+            </div>
+            <div class="form-row">
+                <label for="image">Зображення (шлях від папки lr17):</label>
+                <input type="text" id="image" placeholder="images/book-hobbit.webp">
+            </div>
+            <div class="form-row">
+                <label for="oldPrice">Стара ціна (грн):</label>
+                <input type="number" id="oldPrice" min="0" step="0.01">
+            </div>
+            <div class="form-row">
+                <label for="available">Наявність:</label>
+                <select id="available">
+                    <option value="1">У продажі</option>
+                    <option value="0">Незабаром у продажі</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="badgeType">Позначка:</label>
+                <select id="badgeType">
+                    <option value="">Без позначки</option>
+                    <option value="new">Новинка</option>
+                    <option value="bestseller">Хіт продажів</option>
+                </select>
+            </div>
+            <div class="actions">
+                <button type="submit" id="submitBtn">Додати</button>
+                <button type="button" id="cancelBtn" class="cancel-btn" style="display:none;" onclick="cancelEdit()">Скасувати</button>
+            </div>
+            <div id="statusMsg" class="msg"></div>
+        </form>
+    </div>
+
+    <div class="box">
+        <h2>Список товарів з бази даних</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Назва</th>
+                    <th>Автор</th>
+                    <th>Категорія</th>
+                    <th>Ціна</th>
+                    <th style="width: 170px;">Дії</th>
+                </tr>
+            </thead>
+            <tbody id="booksList"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const url = 'http://localhost:3002/books';
+        let booksData = [];
+
+        async function getBooks() {
+            try {
+                const res = await fetch(url);
+                booksData = await res.json();
+                const tbody = document.getElementById('booksList');
+                tbody.innerHTML = '';
+                booksData.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.id}</td>
+                        <td>${item.title}</td>
+                        <td>${item.author}</td>
+                        <td>${item.category}</td>
+                        <td>${item.price} грн</td>
+                        <td>
+                            <button class="edit-btn" onclick="startEdit(${item.id})">Редагувати</button>
+                            <button class="del-btn" onclick="delBook(${item.id})">Видалити</button>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        function startEdit(id) {
+            const item = booksData.find(b => b.id === id);
+            if (!item) return;
+
+            document.getElementById('editId').value = item.id;
+            document.getElementById('title').value = item.title;
+            document.getElementById('author').value = item.author;
+            document.getElementById('category').value = item.category;
+            document.getElementById('price').value = item.price;
+            document.getElementById('titleEn').value = item.title_en || '';
+            document.getElementById('categoryEn').value = item.category_en || '';
+            document.getElementById('image').value = item.image || '';
+            document.getElementById('oldPrice').value = item.old_price || '';
+            document.getElementById('available').value = String(item.available);
+            document.getElementById('badgeType').value = item.badge_type || '';
+
+            document.getElementById('formTitle').innerText = 'Редагування товару (ID: ' + item.id + ')';
+            document.getElementById('submitBtn').innerText = 'Зберегти зміни';
+            document.getElementById('cancelBtn').style.display = 'inline-block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function cancelEdit() {
+            document.getElementById('bookForm').reset();
+            document.getElementById('editId').value = '';
+            document.getElementById('formTitle').innerText = 'Додавання товару';
+            document.getElementById('submitBtn').innerText = 'Додати';
+            document.getElementById('cancelBtn').style.display = 'none';
+        }
+
+        document.getElementById('bookForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const editId = document.getElementById('editId').value;
+            const book = {
+                title: document.getElementById('title').value,
+                author: document.getElementById('author').value,
+                category: document.getElementById('category').value,
+                price: Number(document.getElementById('price').value),
+                title_en: document.getElementById('titleEn').value,
+                category_en: document.getElementById('categoryEn').value,
+                image: document.getElementById('image').value,
+                old_price: Number(document.getElementById('oldPrice').value) || null,
+                available: Number(document.getElementById('available').value),
+                badge_type: document.getElementById('badgeType').value
+            };
+
+            const statusEl = document.getElementById('statusMsg');
+
+            if (editId) {
+                // PUT /books/:id (оновлення)
+                const res = await fetch(url + '/' + editId, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(book)
+                });
+                const msg = await res.text();
+                statusEl.innerText = msg;
+                cancelEdit();
+            } else {
+                // POST /books (додавання)
+                const res = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(book)
+                });
+                const msg = await res.text();
+                statusEl.innerText = msg;
+                document.getElementById('bookForm').reset();
+            }
+
+            getBooks();
+            setTimeout(() => { statusEl.innerText = ''; }, 3000);
+        });
+
+        async function delBook(id) {
+            if (!confirm('Видалити книгу з ID: ' + id + '?')) return;
+            await fetch(url + '/' + id, { method: 'DELETE' });
+            getBooks();
+        }
+
+        getBooks();
+    </script>
+</body>
+</html>
